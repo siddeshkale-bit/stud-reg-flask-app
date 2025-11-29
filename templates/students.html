@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Students List</title>
+</head>
+<body>
+
+<h1>Registered Students</h1>
+
+<table border="1" cellpadding="5">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Course</th>
+        <th>Address</th>
+    </tr>
+
+    {% for s in students %}
+    <tr>
+        <td>{{ s.id }}</td>
+        <td>{{ s.name }}</td>
+        <td>{{ s.email }}</td>
+        <td>{{ s.phone }}</td>
+        <td>{{ s.course }}</td>
+        <td>{{ s.address }}</td>
+<td><a href="/edit/{{ s.id }}">Edit</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
+
