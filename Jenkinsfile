@@ -11,9 +11,10 @@ pipeline {
         stage('Setup Python Env') {
             steps {
                 bat """
-                python -m venv venv
-                .\\venv\\Scripts\\activate
-                pip install -r requirements.txt
+                "C:\\Users\\lenovo\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m venv venv
+                call venv\\Scripts\\activate
+                "C:\\Users\\lenovo\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m pip install --upgrade pip
+                "C:\\Users\\lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\pip.exe" install -r requirements.txt
                 """
             }
         }
@@ -21,7 +22,7 @@ pipeline {
         stage('Run App Tests') {
             steps {
                 bat """
-                .\\venv\\Scripts\\activate
+                call venv\\Scripts\\activate
                 echo No tests added yet
                 """
             }
